@@ -62,7 +62,7 @@ def attempt2(row, board, size):
 print('How many queens? ')
 N = read(int)
 board = Board(N)
-print("The empty chess board: \n {}")
+print("The empty chess board: \n")
 board.__str__()
 print()
 attempt2(0, board, N)
