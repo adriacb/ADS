@@ -36,10 +36,10 @@ class Board:
 
 def attempt(row, board, size):
     if row == size:
-        board.draw()
+        board.draw() #This function has not been implemented yet.
     else:
         for column in range(size):
-            if board.size(row, column):
+            if board.free(row, column):
                 board.put_q(row, column) #put the queen
                 attempt(row+1, board, size) #skipping the current row, to move down in the tree
                 board.remove_Q(row, column) #remove the queen because we are doing the for loop by column, so it will keep tracking all possibilities
