@@ -15,7 +15,7 @@ public:
 
    Board(int n): b(n, vector<int>(n))
    {
-       //vector<vector<int> > b(n, vector<int>(n));
+       //b = vector<vector<int> > (n, vector<int>(n));
        for (int i =0; i < n; ++i){
            for(int j = 0; j < n; ++j){
                b[i][j] = 0;
@@ -47,7 +47,7 @@ public:
        for (int i=row, j=column; i>=0 && j>=0; i--, j--)
           if (b[i][j]) //check whether there is queen in the left upper diagonal or not
              return false;
-       for (int i=row, j=column; j>=0 && i<n; i++, j--)
+       for (int i=row, j=column; j>=0 && i<b.size(); i--, j++)
           if (b[i][j]) //check whether there is queen in the left lower diagonal or not
              return false;
        // check the diagonals now
